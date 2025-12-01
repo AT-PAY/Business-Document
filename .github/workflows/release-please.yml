@@ -1,26 +1,26 @@
 name: release-please
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 permissions:
-  contents: write
-  pull-requests: write
+    contents: write
+    pull-requests: write
 
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: google-github-actions/release-please-action@v4
-        with:
-          release-type: simple
-          package-name: atpay
-          changelog-types: >
-            [{"type":"feat","section":"Features"},
-             {"type":"fix","section":"Bug Fixes"},
-             {"type":"perf","section":"Performance"},
-             {"type":"refactor","section":"Refactoring"},
-             {"type":"docs","section":"Documentation"},
-             {"type":"test","section":"Tests"},
-             {"type":"build","section":"Build"},
-             {"type":"ci","section":"CI"},
-             {"type":"chore","section":"Chores"}]
+    release-please:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: google-github-actions/release-please-action@v4
+              with:
+                  release-type: simple
+                  package-name: atpay
+                  changelog-types: >
+                      [{"type":"feat","section":"Features"},
+                       {"type":"fix","section":"Bug Fixes"},
+                       {"type":"perf","section":"Performance"},
+                       {"type":"refactor","section":"Refactoring"},
+                       {"type":"docs","section":"Documentation"},
+                       {"type":"test","section":"Tests"},
+                       {"type":"build","section":"Build"},
+                       {"type":"ci","section":"CI"},
+                       {"type":"chore","section":"Chores"}]

@@ -1,12 +1,15 @@
 name: pr-title-lint
+
 on:
-  pull_request_target:
-    types: [opened, edited, synchronize, reopened]
+    pull_request_target:
+        types: [opened, edited, synchronize, reopened]
+
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: aslafy-z/conventional-pr-title-action@v3
-        with:
-          types: |
-            feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
+    lint:
+        runs-on: ubuntu-latest
+        permissions:
+            statuses: write
+        steps:
+            - uses: aslafy-z/conventional-pr-title-action@v3
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
